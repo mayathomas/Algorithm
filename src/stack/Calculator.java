@@ -13,6 +13,7 @@ public class Calculator {
 	Stack<String> operandStack;
 	
 	public Calculator() {
+		
 		operandStack = new Stack<String>();
 		operatorStack = new Stack<String>();
 	}
