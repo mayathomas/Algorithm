@@ -20,17 +20,17 @@ public class MergeSort {
 	}
 	
 	public static void mergeSort(int[] arr, int n) {
-		mergeSortCore(arr, 0, n-1);
+		mergeSort(arr, 0, n-1);
 	}
 	
-	public static void mergeSortCore(int[] arr, int left, int right) {
+	public static void mergeSort(int[] arr, int left, int right) {
 		
 		if(left >= right) return;
 		
 		int mid = (left + right) / 2;
-		mergeSortCore(arr, left, mid);
-		mergeSortCore(arr, mid + 1, right);
-		merge(arr, left, mid, right);
+		mergeSort(arr, left, mid);
+		mergeSort(arr, mid + 1, right);
+		mergeSortCore(arr, left, mid, right);
 	}
 	
 	/**
@@ -40,7 +40,7 @@ public class MergeSort {
 	 * @param mid
 	 * @param right
 	 */
-	public static void merge(int[] arr, int left, int mid, int right) {
+	public static void mergeSortCore(int[] arr, int left, int mid, int right) {
 		int[] newArr = new int[right-left+1];
 		int i = left;
 		int j = mid + 1;
